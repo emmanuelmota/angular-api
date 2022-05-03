@@ -1,0 +1,51 @@
+<!doctype html>
+<html ng-app="classyPrep">
+
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="./server/controller.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div id="container">
+    <img id="logo" src="./logo.svg"> </img>
+    <h2 class="centerText"> Technical Analyst Interview: </br>Donation form demo</h2>
+    <!-- Populate form with API-->
+    <div class="listDiv" ng-controller="classyPrepController as todoList">
+
+      <!-- Form  with Default submit of addToDo method-->
+      <input class="btn-primary" type="submit" ng-click="todoList.getFromApi()" value="Fill form from API">
+
+      <form ng-submit="todoList.getFromApi()">
+        <input class="firstName" type="text" ng-model="todoList.fakePerson.firstName" size="30"
+          placeholder="First Name">
+        <input class="lastName" type="text" ng-model="todoList.fakePerson.lastName" size="30" placeholder="Last Name">
+        <input class="email" type="text" ng-model="todoList.fakePerson.email" size="30" placeholder="Email Address">
+        <input class="streetNumber" type="text" ng-model="todoList.fakePerson.streetNumber" size="30"
+          placeholder="Street Number">
+        <input class="streetName" type="text" ng-model="todoList.fakePerson.street" size="30"
+          placeholder="Street Name">
+        <input class="city" type="text" ng-model="todoList.fakePerson.city" size="30" placeholder="City">
+        <input class="cc" type="text" ng-model="todoList.fakePerson.ccNumber" size="30"
+          placeholder="Credit Card Number">
+        <!-- Button to submit -->
+        <!-- <input class="btn-primary" type="submit" value="dunno"> -->
+      </form>
+      <!--Archive-->
+      <div class="countArchive">{{todoList.remaining()}} of {{todoList.todos.length}} remaining
+        <!-- Archive Button-->
+        <br />
+        <input type="submit" class="crushTaskButton" ng-show="true " ng-click="todoList.submitForm()"
+          value="Complete donation">
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

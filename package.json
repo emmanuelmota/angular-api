@@ -1,0 +1,28 @@
+{
+  "name": "angular-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon server.js -e js,html",
+    "watch": "nodemon server.js  --ext *  --watch public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emmanuelmota/angular-api.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/emmanuelmota/angular-api/issues"
+  },
+  "homepage": "https://github.com/emmanuelmota/angular-api#readme",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  }
+}
