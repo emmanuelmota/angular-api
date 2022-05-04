@@ -10,7 +10,7 @@
   width: 25vw;
 }
 .container.active {
-visibility: hidden;
+  visibility: hidden;
 }
 #logo {
   height: 100px;
@@ -22,6 +22,9 @@ visibility: hidden;
   margin: auto;
   display: flex;
   flex-direction: column;
+}
+.formDiv.active {
+  visibility: hidden;
 }
 .form {
   margin-top: 20px;
@@ -67,7 +70,6 @@ ul.list {
 .popup-content.active {
   /*Shows pop-up content when "active" class is present */
   visibility: visible;
-
 }
 .close {
   margin-bottom: 20px;

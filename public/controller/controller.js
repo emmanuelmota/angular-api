@@ -87,5 +87,7 @@ $(document).ready(function () {
   //removes the "active" class to .popup and .popup-content when the "Close" button is clicked
   $(".close").on("click", function () {
     $(".popup-overlay, .popup-content, .container").removeClass("active");
+    $(".centerText").text("Thank you for your time 👨🏽‍💻");
+    $(".formDiv").addClass("active");
   });
 });
