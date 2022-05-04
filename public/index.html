@@ -13,43 +13,47 @@
 </head>
 
 <body>
-  <div id="container">
+  <div id="container" class="container"  ng-controller="classyPrepController as todoList">
     <img id="logo" src="./logo.svg"> </img>
     <h2 class="centerText"> Technical Analyst Interview: </br>Donation form demo</h2>
-    <!-- Populate form with API-->
-    <div class="formDiv" ng-controller="classyPrepController as todoList">
-      <!--Creates the popup body-->
-      <div class="popup-overlay">
-        <!--Creates the popup content-->
-        <div class="popup-content">
-          <h2>Thank you for your donation!</h2>
-          <p>Your support is appreciated {{ todoList.fakePerson.firstName }}</p>
-          <p>A confirmation of this donation has been sent to: {{todoList.fakePerson.email}}</p>
-          <!--popup's close button-->
-          <button class="close">Close</button>
-        </div>
-      </div>
+          <!--Creates the popup body-->
+          <div class="popup-overlay">
+            <!--Creates the popup content-->
+            <div class="popup-content">
+              <h1>Thank you for your donation</h1>
+              <p>Your support is appreciated {{ todoList.fakePerson.firstName }}!</p>
+              <p>Your donation gift will be sent to: </p>
+              <p>{{ todoList.fakePerson.firstName }} {{ todoList.fakePerson.lastName }}</p>
+              <p>{{ todoList.fakePerson.streetNumber }} {{ todoList.fakePerson.street }},</p>
+              <p>{{ todoList.fakePerson.city }}</p>
+              <p>A confirmation of this donation has been sent to: {{todoList.fakePerson.email}}</p>
+              <!--popup's close button-->
+              <button class="close">Close</button>
+            </div>
+          </div>
 
+    <!-- Populate form with API-->
+    <div class="formDiv">
       <!-- Form  with Default submit of addToDo method-->
       <input class="btn-primary" type="submit" ng-click="todoList.getFromApi()" value="Fill form from API">
-
-      <form class="form" ng-submit="todoList.getFromApi()">
-        <input class="firstName formField" type="text" ng-model="todoList.fakePerson.firstName" size="30"
-          placeholder="First Name">
-        <input class="lastName formField" type="text" ng-model="todoList.fakePerson.lastName" size="30" placeholder="Last Name">
-        <input class="email formField" type="text" ng-model="todoList.fakePerson.email" size="30" placeholder="Email Address">
-        <input class="streetNumber formField" type="text" ng-model="todoList.fakePerson.streetNumber" size="30"
-          placeholder="Street Number">
-        <input class="streetName formField" type="text" ng-model="todoList.fakePerson.street" size="30" placeholder="Street Name">
-        <input class="city formField" type="text" ng-model="todoList.fakePerson.city" size="30" placeholder="City">
-        <input class="cc formField" type="text" ng-model="todoList.fakePerson.ccNumber" size="30"
-          placeholder="Credit Card Number">
-        <!-- Button to submit -->
-        <!-- <input class="btn-primary" type="submit" value="dunno"> -->
-      </form>
-      <!--Submit-->
-        <input type="submit" class="submitForm" ng-show="true " ng-click="todoList.submitForm()"
-          value="Complete donation">
+        <form class="form" ng-submit="todoList.getFromApi()">
+          <input class="firstName formField" type="text" ng-model="todoList.fakePerson.firstName" size="30"
+            placeholder="First Name">
+          <input class="lastName formField" type="text" ng-model="todoList.fakePerson.lastName" size="30"
+            placeholder="Last Name">
+          <input class="email formField" type="text" ng-model="todoList.fakePerson.email" size="30"
+            placeholder="Email Address">
+          <input class="streetNumber formField" type="text" ng-model="todoList.fakePerson.streetNumber" size="30"
+            placeholder="Street Number">
+          <input class="streetName formField" type="text" ng-model="todoList.fakePerson.street" size="30"
+            placeholder="Street Name">
+          <input class="city formField" type="text" ng-model="todoList.fakePerson.city" size="30" placeholder="City">
+          <input class="cc formField" type="text" ng-model="todoList.fakePerson.ccNumber" size="30"
+            placeholder="Credit Card Number">
+        </form>
+      <!--Submit Form-->
+      <input type="submit" class="submitForm" ng-show="true " ng-click="todoList.submitForm()"
+        value="Complete donation">
     </div>
   </div>
 </body>

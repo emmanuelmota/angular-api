@@ -9,6 +9,9 @@
   align-items: center;
   width: 25vw;
 }
+.container.active {
+visibility: hidden;
+}
 #logo {
   height: 100px;
 }
@@ -47,7 +50,6 @@ ul.list {
   background: #ffffff;
   border: 3px solid #666666;
   width: 50%;
-  height: 50%;
   left: 25%;
 }
 
@@ -65,4 +67,8 @@ ul.list {
 .popup-content.active {
   /*Shows pop-up content when "active" class is present */
   visibility: visible;
+
+}
+.close {
+  margin-bottom: 20px;
 }

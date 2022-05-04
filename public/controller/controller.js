@@ -45,7 +45,7 @@ angular
         todoList.fakePerson.city !== null &&
         todoList.fakePerson.ccNumber !== null
       ) {
-        console.log("submitForm fired");
+        console.log("submitForm invoked");
         formComplete = true;
         let fn = $(".firstName").val();
         let ln = $(".lastName").val();
@@ -77,17 +77,16 @@ let alertAnimation = (className) => {
 //console.log(formComplete);
 $(document).ready(function () {
   $("#logo").click(function () {
-    $("#container").fadeOut("slow");
-    $("#container").fadeIn("slow");
+    $("#container").fadeOut("slow").fadeIn("slow");
   });
-    $(".submitForm").on("click", function () {
-      if (true) {
-        $(".popup-overlay, .popup-content").addClass("active");
-      }
-    });
-    //removes the "active" class to .popup and .popup-content when the "Close" button is clicked
-    $(".close, .popup-overlay").on("click", function () {
-      $(".popup-overlay, .popup-content").removeClass("active");
-    });
-
+  $(".submitForm").on("click", function () {
+    // Shortcircut logic until I can implement a formComplete variable
+    if (true) {
+      $(".popup-overlay, .popup-content, .container").addClass("active");
+    }
+  });
+  //removes the "active" class to .popup and .popup-content when the "Close" button is clicked
+  $(".close").on("click", function () {
+    $(".popup-overlay, .popup-content, .container").removeClass("active");
+  });
 });
