@@ -69,8 +69,7 @@ angular
 let alertAnimation = (className) => {
   let i = 0;
   while (i < 3) {
-    $(`.${className}`).fadeOut(100);
-    $(`.${className}`).fadeIn(100);
+    $(`.${className}`).fadeOut(100).fadeIn(100);
     i++;
   }
 };
