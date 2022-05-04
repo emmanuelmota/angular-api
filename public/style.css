@@ -23,9 +23,6 @@
   display: flex;
   flex-direction: column;
 }
-.formDiv.active {
-  visibility: hidden;
-}
 .form {
   margin-top: 20px;
   margin-bottom: 20px;

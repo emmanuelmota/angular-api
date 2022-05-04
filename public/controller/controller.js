@@ -46,6 +46,7 @@ angular
         todoList.fakePerson.ccNumber !== null
       ) {
         console.log("submitForm invoked");
+        // Implement formComplete logic later
         formComplete = true;
         let fn = $(".firstName").val();
         let ln = $(".lastName").val();
@@ -61,7 +62,7 @@ angular
     };
     // Submit Modal
     todoList.modal = function (fn, ln, em, sn, st, ct, cc) {
-      console.log(fn, ln, em, sn, st, ct, cc);
+      console.log(...arguments);
     };
   });
 // JQUERY
@@ -73,21 +74,21 @@ let alertAnimation = (className) => {
     i++;
   }
 };
-//console.log(formComplete);
+// Jquery
 $(document).ready(function () {
   $("#logo").click(function () {
     $("#container").fadeOut("slow").fadeIn("slow");
   });
   $(".submitForm").on("click", function () {
-    // Shortcircut logic until I can implement a formComplete variable
+    // Shortcircuit logic until I can implement a formComplete variable
     if (true) {
       $(".popup-overlay, .popup-content, .container").addClass("active");
     }
   });
-  //removes the "active" class to .popup and .popup-content when the "Close" button is clicked
   $(".close").on("click", function () {
     $(".popup-overlay, .popup-content, .container").removeClass("active");
     $(".centerText").text("Thank you for your time 👨🏽‍💻");
-    $(".formDiv").addClass("active");
+    $(".formDiv").remove();
+    $("#container").css("height", "50vw");
   });
 });
